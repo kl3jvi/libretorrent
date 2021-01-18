@@ -12,6 +12,7 @@ import org.xml.sax.Attributes;
  * Item implementation for Atom feeds.
  */
 class AtomItem extends BaseItem {
+    //
     // XML elements for Atom items.
     private static final String TITLE = "title";
     private static final String LINK = "link";
