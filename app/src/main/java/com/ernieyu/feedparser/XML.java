@@ -18,7 +18,7 @@ public class XML
 
 	static {
 		// Derived from Wikipedia http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
-		final Map<String, Integer> map = new HashMap<String, Integer>();
+		final Map<String, Integer> map = new HashMap<>();
 		map.put("quot", 34);
 		map.put("amp", 38);
 		map.put("apos", 39);

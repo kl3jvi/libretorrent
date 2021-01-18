@@ -64,7 +64,12 @@ public class FeedUtils {
             // Parse date using Atom format.
             Date date = ATOM_DATE.parse(dateStr);
             // Return date with milliseconds.
-            return (millisec > 0) ? new Date(date.getTime() + millisec) : date;
+            if ((millisec > 0)) {
+                assert date != null;
+                return new Date(date.getTime() + millisec);
+            } else {
+                return date;
+            }
         } catch (ParseException ex) {
             // Return null if date cannot be parsed.
             return null;

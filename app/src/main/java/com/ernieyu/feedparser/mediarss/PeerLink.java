@@ -1,5 +1,7 @@
 package com.ernieyu.feedparser.mediarss;
 
+import java.util.Objects;
+
 /**
  * Optional element for P2P link.
  *
@@ -44,9 +46,9 @@ public class PeerLink {
 
         PeerLink that = (PeerLink) o;
 
-        if (href != null ? !href.equals(that.href) : that.href != null)
+        if (!Objects.equals(href, that.href))
             return false;
-        return type != null ? type.equals(that.type) : that.type == null;
+        return Objects.equals(type, that.type);
     }
 
     @Override

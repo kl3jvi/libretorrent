@@ -118,7 +118,7 @@ public class XMLInputStream extends FilterInputStream {
         }
     }
 
-    private void given(CharSequence s, int wanted, int got) {
+    private void given(CharSequence s, int got) {
         // Keep track of what we've given them.
         red.append(s);
         given += got;
@@ -127,7 +127,7 @@ public class XMLInputStream extends FilterInputStream {
     @Override
     public int read() throws IOException {
         StringBuilder s = read(1);
-        given(s, 1, 1);
+        given(s, 1);
         return s.length() > 0 ? s.charAt(0) : -1;
     }
 
@@ -139,7 +139,7 @@ public class XMLInputStream extends FilterInputStream {
             data[offset + i] = (byte) s.charAt(i);
             n += 1;
         }
-        given(s, length, n);
+        given(s, n);
         return n > 0 ? n : -1;
     }
 
